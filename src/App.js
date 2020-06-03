@@ -59,6 +59,7 @@ class App extends React.Component {
 
   clearTodo = e => {
     e.preventDefault();
+    
     // if item is purchased (item.purchased is true) then filter out
     this.setState({
       todos: this.state.todos.filter(todo => !todo.completed)
@@ -71,7 +72,7 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
         <h2>Welcome to your Todo App!</h2>
-        <ListForm addTodo={this.addTodo} />
+        <ListForm addTodo={this.addTodo} clearTodo={this.clearTodo}/>
         <TodoList todo={this.state.todos} toggleTodo={this.toggleTodo} clearTodo={this.clearTodo}/>
 
         
